@@ -1,0 +1,1312 @@
+{
+	"info": {
+		"_postman_id": "c58cf483-97eb-49c4-9c5a-b6727d53be21",
+		"name": "Ifabula",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15153404",
+		"_collection_link": "https://grey-firefly-10812.postman.co/workspace/Notif~5bff63f4-0ac3-4e5b-9e07-bc29ca7ad947/collection/15153404-c58cf483-97eb-49c4-9c5a-b6727d53be21?action=share&creator=15153404&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "User API",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"putra1@mail.com\",\r\n    \"password\": \"Test1234\",\r\n    \"is_admin\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Wrong Email Format",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"putra@mail\",\r\n    \"password\": \"Test1234\",\r\n    \"is_admin\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/user/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "70"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"46-exjMoJepQ/2gYdT/dzD7g8iJ+GU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jul 2023 06:33:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {},\n    \"status\": \"error\",\n    \"message\": \"wrong email format\",\n    \"code\": 400\n}"
+						},
+						{
+							"name": "Wrong Password Format",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"putra1@mail\",\r\n    \"password\": \"test1234\",\r\n    \"is_admin\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/user/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "173"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ad-ZQSylMCQvfIxo6l0mI7ZYCLbJOM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jul 2023 06:33:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {},\n    \"status\": \"error\",\n    \"message\": \"Password must be alphanumeric characters and must contain at least 1 capital letters, may not contain special characters.\",\n    \"code\": 400\n}"
+						},
+						{
+							"name": "Email Already Registered",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"putra@mail.com\",\r\n    \"password\": \"Test1234\",\r\n    \"is_admin\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/user/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "76"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4c-jauxZW7Iok1RLvl3yyhrlPtT4us\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jul 2023 06:34:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {},\n    \"status\": \"error\",\n    \"message\": \"email already registered\",\n    \"code\": 400\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"putra1@mail.com\",\r\n    \"password\": \"Test1234\",\r\n    \"is_admin\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/user/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "54"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36-h7JU58/LXXLJvz9qcPpTLyiDGPY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jul 2023 06:34:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {},\n    \"status\": \"success\",\n    \"message\": \"ok\",\n    \"code\": 201\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"11"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMSwiZW1haWwiOiJwdXRyYWF3YWxpQG1haWwuY29tIiwiaXNfYWRtaW4iOnRydWUsImlhdCI6MTY4OTc2Nzg3M30.Lqg9k33ck_MJwbSQJUkx5hUyzDiGHzbbFOPgrrYERok",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/user/100",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"100"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"42-VuUvuioLJx8AQPI5lxx2moGIfm4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jul 2023 06:53:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {},\n    \"status\": \"error\",\n    \"message\": \"user not found\",\n    \"code\": 404\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/user/11",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"11"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "188"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bc-vuI45//yD6e9mBsnbEMiQRSvZTo\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jul 2023 06:56:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"user_id\": 3,\n        \"email\": \"putra@mail.com\",\n        \"is_admin\": true,\n        \"created_at\": \"2023-07-19T06:22:03.013Z\",\n        \"updated_at\": \"2023-07-19T06:22:03.013Z\"\n    },\n    \"status\": \"success\",\n    \"message\": \"ok\",\n    \"code\": 200\n}"
+						},
+						{
+							"name": "No Credential",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/user/11",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"11"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "70"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"46-xygiGTDeJu1uSsFjKKsTNCjSbiw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jul 2023 11:59:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {},\n    \"status\": \"error\",\n    \"message\": \"please login first\",\n    \"code\": 401\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Aut",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"putra1@mail.com\",\r\n    \"password\": \"Test1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Aut",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"putraawalii@mail.com\",\r\n    \"password\": \"Test123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"42-VuUvuioLJx8AQPI5lxx2moGIfm4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jul 2023 11:57:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {},\n    \"status\": \"error\",\n    \"message\": \"user not found\",\n    \"code\": 404\n}"
+						},
+						{
+							"name": "Wrong password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Aut",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"putraawali@mail.com\",\r\n    \"password\": \"Test123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"42-0DRdkIdiFu18He8kC7Nf4hOQUfc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jul 2023 11:57:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {},\n    \"status\": \"error\",\n    \"message\": \"Wrong password\",\n    \"code\": 400\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Aut",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"putraawali@mail.com\",\r\n    \"password\": \"Test1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "250"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fa-O+M+GAj2JRtDoI45Fmy2+oJjnoQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jul 2023 11:57:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMSwiZW1haWwiOiJwdXRyYWF3YWxpQG1haWwuY29tIiwiaXNfYWRtaW4iOnRydWUsImlhdCI6MTY4OTc2Nzg3M30.Lqg9k33ck_MJwbSQJUkx5hUyzDiGHzbbFOPgrrYERok\"\n    },\n    \"status\": \"success\",\n    \"message\": \"ok\",\n    \"code\": 200\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Rent Book API",
+			"item": [
+				{
+					"name": "Rent Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/book/2/rent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"book",
+								"2",
+								"rent"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "No Credential",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/book/2/rent",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"book",
+										"2",
+										"rent"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "70"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"46-xygiGTDeJu1uSsFjKKsTNCjSbiw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jul 2023 09:49:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {},\n    \"status\": \"error\",\n    \"message\": \"please login first\",\n    \"code\": 401\n}"
+						},
+						{
+							"name": "Success rent book",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMCwiZW1haWwiOiJwdXRyYTFAbWFpbC5jb20iLCJpc19hZG1pbiI6dHJ1ZSwiaWF0IjoxNjg5NzU0NTg0fQ.JkorNpa90G1aKSsSTfNfODPObuQKQLnrHS_5_3rbAnM",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/book/2/rent",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"book",
+										"2",
+										"rent"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47-dg5muje4kDvbOy+d6eTJj9N8LzI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jul 2023 10:14:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {},\n    \"status\": \"success\",\n    \"message\": \"Success rent book\",\n    \"code\": 201\n}"
+						},
+						{
+							"name": "Have an active rent",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMCwiZW1haWwiOiJwdXRyYTFAbWFpbC5jb20iLCJpc19hZG1pbiI6dHJ1ZSwiaWF0IjoxNjg5NzU0NTg0fQ.JkorNpa90G1aKSsSTfNfODPObuQKQLnrHS_5_3rbAnM",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/book/2/rent",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"book",
+										"2",
+										"rent"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4d-mSF/1KusZjonmPtCobJ74+fdm4U\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jul 2023 10:15:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {},\n    \"status\": \"error\",\n    \"message\": \"You have active rent book\",\n    \"code\": 400\n}"
+						}
+					]
+				},
+				{
+					"name": "Return book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMCwiZW1haWwiOiJwdXRyYTFAbWFpbC5jb20iLCJpc19hZG1pbiI6dHJ1ZSwiaWF0IjoxNjg5NzU0NTg0fQ.JkorNpa90G1aKSsSTfNfODPObuQKQLnrHS_5_3rbAnM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/book/2/return",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"book",
+								"2",
+								"return"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "No credential",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/book/2/return",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"book",
+										"2",
+										"return"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "70"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"46-xygiGTDeJu1uSsFjKKsTNCjSbiw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jul 2023 10:21:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {},\n    \"status\": \"error\",\n    \"message\": \"please login first\",\n    \"code\": 401\n}"
+						}
+					]
+				},
+				{
+					"name": "Book list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMCwiZW1haWwiOiJwdXRyYTFAbWFpbC5jb20iLCJpc19hZG1pbiI6dHJ1ZSwiaWF0IjoxNjg5NzU0NTg0fQ.JkorNpa90G1aKSsSTfNfODPObuQKQLnrHS_5_3rbAnM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "No Credential",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/books",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"books"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "70"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"46-xygiGTDeJu1uSsFjKKsTNCjSbiw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jul 2023 11:17:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {},\n    \"status\": \"error\",\n    \"message\": \"please login first\",\n    \"code\": 401\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMCwiZW1haWwiOiJwdXRyYTFAbWFpbC5jb20iLCJpc19hZG1pbiI6dHJ1ZSwiaWF0IjoxNjg5NzU0NTg0fQ.JkorNpa90G1aKSsSTfNfODPObuQKQLnrHS_5_3rbAnM",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/books",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"books"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "879"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36f-n0OcpXhQKqSML2hV8LBGLc3bU28\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jul 2023 11:20:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"book_id\": 2,\n            \"title\": \"buku 1\",\n            \"status\": true,\n            \"created_at\": \"2023-07-19T08:54:13.065Z\",\n            \"updated_at\": null\n        },\n        {\n            \"book_id\": 3,\n            \"title\": \"buku 2\",\n            \"status\": true,\n            \"created_at\": \"2023-07-19T08:54:13.065Z\",\n            \"updated_at\": null\n        },\n        {\n            \"book_id\": 4,\n            \"title\": \"buku 3\",\n            \"status\": true,\n            \"created_at\": \"2023-07-19T08:54:13.065Z\",\n            \"updated_at\": null\n        },\n        {\n            \"book_id\": 5,\n            \"title\": \"buku 4\",\n            \"status\": true,\n            \"created_at\": \"2023-07-19T08:54:13.065Z\",\n            \"updated_at\": null\n        },\n        {\n            \"book_id\": 6,\n            \"title\": \"buku 5\",\n            \"status\": true,\n            \"created_at\": \"2023-07-19T08:54:13.065Z\",\n            \"updated_at\": null\n        },\n        {\n            \"book_id\": 7,\n            \"title\": \"buku 6\",\n            \"status\": true,\n            \"created_at\": \"2023-07-19T08:54:13.065Z\",\n            \"updated_at\": null\n        },\n        {\n            \"book_id\": 8,\n            \"title\": \"buku 7\",\n            \"status\": true,\n            \"created_at\": \"2023-07-19T08:54:13.065Z\",\n            \"updated_at\": null\n        },\n        {\n            \"book_id\": 9,\n            \"title\": \"buku 8\",\n            \"status\": true,\n            \"created_at\": \"2023-07-19T08:54:13.065Z\",\n            \"updated_at\": null\n        }\n    ],\n    \"status\": \"success\",\n    \"message\": \"ok\",\n    \"code\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Book Detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMSwiZW1haWwiOiJwdXRyYWF3YWxpQG1haWwuY29tIiwiaXNfYWRtaW4iOnRydWUsImlhdCI6MTY4OTc2Nzg3M30.Lqg9k33ck_MJwbSQJUkx5hUyzDiGHzbbFOPgrrYERok",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/book/3/detail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"book",
+								"3",
+								"detail"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMSwiZW1haWwiOiJwdXRyYWF3YWxpQG1haWwuY29tIiwiaXNfYWRtaW4iOnRydWUsImlhdCI6MTY4OTc2Nzg3M30.Lqg9k33ck_MJwbSQJUkx5hUyzDiGHzbbFOPgrrYERok",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/book/2/detail",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"book",
+										"2",
+										"detail"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "194"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c2-T4rkdLc1FXmfrxhP9oaxbmMyOGw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jul 2023 12:18:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"book_id\": 2,\n        \"title\": \"buku 1\",\n        \"status\": true,\n        \"created_at\": \"2023-07-19T08:54:13.065Z\",\n        \"updated_at\": \"2023-07-19T12:14:50.373Z\",\n        \"borrower\": null\n    },\n    \"status\": \"success\",\n    \"message\": \"ok\",\n    \"code\": 200\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
